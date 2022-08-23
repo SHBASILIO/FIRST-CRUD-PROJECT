@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+ {% block head %}
+    <title>SHBASILIO TECH | Movimentação</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+    <h2 class="active">nova movimentação</h2>
+    
+    <div class="wrapper">
+        <form class="cards" method="POST" action="/movimentacoes">
+        
+        {% include 'movimentacoes/fields.njk'%}
+        
+        <!--ATENÇAO A ESTE BOTÃO-->
+        <button class="save" type="submit">Salvar</button>
+    
+        </form><!--form-->
+    </div><!--wrapper-->
+    </div><!--page-->
+
+{% endblock %}

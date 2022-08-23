@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+
+ {% block head %}
+    <title>SHBASILIO TECH | Contêiner</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+    <h2 class="active">editar movimentação</h2>
+
+    <div class="wrapper">
+        
+    <div class="cards">
+        <form class="cards-form" method="POST" action="/movimentacoes?_method=PUT">
+        {% include 'movimentacoes/fields.njk' %}
+        
+        <input type="hidden" name="id" value={{movimentacao.id}}>
+
+        <button type="submit" class="bt-save">Salvar</button>
+        </form><!--form-->
+
+        <form id="form-delete"  method="POST" action="/movimentacoes/?_method=DELETE">
+        <input type="hidden" name="id" value={{movimentacao.id}}>
+        
+        <div class="input-wrapper">
+        <button class="bt-delete" type="submit">Deletar</button>
+        </div>
+        </form>
+
+    </div>
+    </div><!--wrapper-->
+    
+    </div><!--page-->
+
+    <script>
+        const formDelete = document.querySelector("#form-delete")
+        formDelete.addEventListener("submit", function(event){
+            const confirmation = confirm("Deseja deletar?")
+            if(!confirmation){
+                event.preventDefault()
+            }
+        })
+    </script>
+
+{% endblock %}

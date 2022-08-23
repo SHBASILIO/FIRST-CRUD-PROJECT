@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+ {% block head %}
+    <title>SHBASILIO TECH | Movimentações</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+    <h2 class="active">movimentações</h2>
+
+    <div class="wrapper">
+        <div class="cards table-container">
+
+        <a href="/movimentacoes/create" class="bt-create"><span>[+]</span> novo</a>    
+
+        <table width="100%">
+            <thead>
+            <tr>
+                <th>Movimentação</th>
+                <th>Data Início</th>
+                <th>Início</th>
+                <th>Data Final</th>
+                <th>Final</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for movimentacao in movimentacoes%}
+            <tr>
+                <td>{{movimentacao.typemovement}}</td>
+                <td>{{movimentacao.startdate}}</td>
+                <td>{{movimentacao.starttime}}</td>
+                <td>{{movimentacao.enddate}}</td>
+                <td>{{movimentacao.endtime}}</td>
+                <td><a href="/movimentacoes/{{movimentacao.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div><!--cards-->
+
+    </div><!--wrapper-->
+    </div><!--page-->
+
+{% endblock %}

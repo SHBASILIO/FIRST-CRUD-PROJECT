@@ -1,0 +1,86 @@
+
+
+<div class="input-wrapper">
+            
+    <div class="label"><label>Cliente:</label></div>
+    <div><input 
+        type="text" 
+        name="name" 
+        placeholder="Nome cliente"
+        value="{{ conteiner.name }}">
+        </div>
+    </div>
+
+    <div class="input-wrapper">
+        <div class="label"><label>Número do contêiner:</label></div>
+        <div><input 
+        type="text" 
+        name="codigo"
+        maxlength="11"
+        value="{{ conteiner.codigo}}"
+        placeholder="Número do contêiner" ></div>
+    </div>
+
+        <div class="input-wrapper">
+            <div>
+                <div><label>Tipo:</label></div>
+                <span><input type="radio" name="tipo" value="20"
+                    {% if conteiner.tipo == '20'%}
+                    checked
+                    {% endif %}
+                    >20</span>
+                <span><input type="radio" name="tipo" value="40"
+                    {% if conteiner.tipo == '40'%}
+                    checked
+                    {% endif %}
+                    >40</span>
+            </div>
+        </div>
+
+        <div class="input-wrapper">
+            <div><label>Status:</label></div>
+                <div>
+                <span>
+                <select name="status">
+                    <option>selecione um status</option>
+                    <option value="cheio" 
+                    {% if conteiner.status == 'cheio' %} 
+                    selected
+                    {% endif %}
+                    >Cheio</option>
+
+                    <option value="vazio" 
+                    {% if conteiner.status == 'vazio' %} 
+                    selected
+                    {% endif %}
+                    >Vazio</option>
+                </select>
+                </span>
+                </div>
+        </div>
+
+        <div class="input-wrapper">
+            <div><label>Categoria:</label></div>
+                <div>
+                <span>
+                <select name="category">
+                    <option>selecione uma categoria</option>
+                    <option value="import"   
+                    {% if conteiner.category == 'import' %}
+                    selected
+                    {% endif %}
+                    >Importação</option>
+
+                    <option value="export"
+                    {% if conteiner.category == 'export' %}
+                    selected
+                    {% endif %}
+                    >Exportação</option>
+                </select>
+                </span>
+                </div>
+        </div>
+
+        <!--
+        <button type="submit">Salvar</button>
+        -->

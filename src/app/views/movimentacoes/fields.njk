@@ -1,0 +1,103 @@
+
+        <div class="input-wrapper">
+        <div><label>Tipo de movimentação:</label></div>
+
+                <div>
+                <span>
+                <select name="typemovement">
+                    <option>selecione um tipo</option>
+                    <option value="Embarque" 
+                    {% if movimentacao.typemovement == 'Embarque' %} 
+                    selected
+                    {% endif %}
+                    >Embarque</option>
+
+                    <option value="Descarga" 
+                    {% if movimentacao.typemovement == 'Descarga' %} 
+                    selected
+                    {% endif %}
+                    >Descarga</option>
+
+                    <option value="Gate-in" 
+                    {% if movimentacao.typemovement == 'Gate-in' %} 
+                    selected
+                    {% endif %}
+                    >Gate in</option>
+
+                    <option value="Gate-out" 
+                    {% if movimentacao.typemovement == 'Gate-out' %} 
+                    selected
+                    {% endif %}
+                    >Gate out</option>
+
+                    <option value="Reposicionamento" 
+                    {% if movimentacao.typemovement == 'Reposicionamento' %} 
+                    selected
+                    {% endif %}
+                    >Reposicionamento</option>
+
+                    <option value="Pesagem" 
+                    {% if movimentacao.typemovement == 'Pesagem' %} 
+                    selected
+                    {% endif %}
+                    >Pesagem</option>
+
+                    <option value="Scanner" 
+                    {% if movimentacao.typemovement == 'Scanner' %} 
+                    selected
+                    {% endif %}
+                    >Scanner</option>
+                </select>
+                </span>
+                </div>
+        </div>
+
+        <div class="input-wrapper">
+        <div><label>Data e Hora do Início:</label></div>
+        
+        <div class="col-2">
+
+            <div>
+                <span>
+                <label for="startdate"><strong>Data Início</strong></label>
+                <input type="date" name="startdate" id="" value="{{movimentacao.startdate}}">   
+                </span>
+            </div>
+           
+            <div>
+                <span>
+                <label for="starttime"><strong>Hora Início</strong></label>
+                <input type="time" name="starttime" id="" value="{{movimentacao.starttime}}">   
+                </span>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="input-wrapper">
+        <div><label>Data e Hora do Fim:</label></div>
+
+        <div class="col-2">
+
+            <div>
+                <span>
+                <label for="enddate"><strong>Data Fim</strong></label>
+                <input type="date" name="enddate" id="" value="{{movimentacao.enddate}}">   
+                </span>
+            </div>
+           
+            <div>
+                <span>
+                <label for="endtime" class="label"><strong>Hora Fim</strong></label>
+                <input type="time" name="endtime" id="" value="{{movimentacao.endtime}}">   
+                </span>
+            </div>
+
+        </div>
+    </div>
+       
+    </div>
+
+        <!--
+        <button type="submit">Salvar</button>
+        -->

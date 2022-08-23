@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+ {% block head %}
+    <title>SHBASILIO TECH | Contêiner</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+    <h2 class="active">contêiner</h2>
+
+    <div class="wrapper">
+        <div class="cards">
+        
+        <div class="input-wrapper">
+            <div>Cliente:</div>
+            <div>{{conteiner.name}}</div>
+        </div>
+
+        <div class="input-wrapper">
+            <div>Número do contêiner:</div>
+            <div>{{ conteiner.codigo }}</div>
+        </div>
+
+        <div class="input-wrapper">
+            <div>Tipo:</div>
+            <div>{{"20" if conteiner.tipo == "20" else "40"}}</div>
+        </div>
+
+        <div class="input-wrapper">
+            <div>Status:</div>
+            <div><span>{{conteiner.status}}</span></div>
+        </div>
+
+        <div class="input-wrapper">
+            <div>Categoria:</div>
+            <div>{{ "Importação" if conteiner.category == "import" else "Exportação"}}</div>
+        </div>
+
+        <a href="/container/{{ conteiner.id }}/edit" class="button">editar</a>
+
+        </div>
+
+    </div><!--wrapper-->
+    </div><!--page-->
+
+{% endblock %}

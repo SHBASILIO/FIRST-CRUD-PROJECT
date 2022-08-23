@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+ {% block head %}
+    <title>SHBASILIO TECH | Contêiner</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+    <h2 class="active">contêiner</h2>
+
+    <div class="wrapper">
+        <div class="cards table-container">
+
+        <a href="/container/create" class="bt-create"><span>[+]</span> novo</a>
+
+        <table width="100%">
+            <thead>
+            <tr>
+                <th>cliente</th>
+                <th>contêiner</th>
+                <th>tipo</th>
+                <th>status</th>
+                <th>categoria</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for conteiner in container%}
+            <tr>
+                <td>{{conteiner.name}}</td>
+                <td>{{conteiner.codigo}}</td>
+                <td>{{"20" if conteiner.tipo == "20" else "40"}}</td>
+                <td>{{"Cheio" if conteiner.status == "cheio" else "Vazio"}}</td>
+                <td>{{"Exportação" if conteiner.category == "export" else "Importação"}}</td>
+                <td><a href="/container/{{conteiner.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div><!--cards-->
+
+    </div><!--wrapper-->
+    </div><!--page-->
+
+{% endblock %}

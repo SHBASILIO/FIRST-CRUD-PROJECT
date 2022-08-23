@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+
+ {% block head %}
+    <title>SHBASILIO TECH | Contêiner</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page">
+    <h2 class="active">novo contêiner</h2>
+
+    <div class="wrapper">
+        <form class="cards" method="POST" action="/container">
+        
+        {% include 'container/fields.njk'%}
+        
+        <!--ATENÇAO A ESTE BOTÃO-->
+        <button class="save" type="submit">Salvar</button>
+    
+        </form><!--form-->
+
+    </div><!--wrapper-->
+    </div><!--page-->
+
+{% endblock %}

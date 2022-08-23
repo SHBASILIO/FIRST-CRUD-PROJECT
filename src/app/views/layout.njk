@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="/style.css" />
+
+        {% block head %}
+        <title>SHBASILIO TECH</title>
+        {% endblock %}
+    </head>
+
+<body>
+    <header>
+    <div class="header">
+        <div class="menu-mobile">
+        <div class="hamburger"></div>
+        </div>
+
+        <div class="logo">SHBASILIO TECH</div>
+
+        <p>Conheça nossas soluções</p>
+    </div>
+    </header>
+
+    <main>
+    
+    <nav class="nav-bar">
+        <h2>cod user: <span>PL2009</span></h2>
+                
+        <ul>
+        <a href="/container" target="frame-main"><li>Contêiner <span>></span></li></a>
+        <a href="/movimentacoes" target="frame-main"><li>Movimentações <span>></span></li></a>
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+        
+    </main>  
+    
+    <script src="/script.js"></script>
+   
+</body>
+</html>
